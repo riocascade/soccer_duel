@@ -42,3 +42,8 @@ html, body, canvas {
 	src: url('fonts/adineue pro bold.otf') format('opentype');
 }
 
+@font-face {
+	font-family: 'dotty';
+	src: url('fonts/dotty.ttf') format('truetype');
+}
+
