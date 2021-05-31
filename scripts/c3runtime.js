@@ -5454,6 +5454,8 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.System.Acts.RestartLayout,
+		C3.Plugins.Multiplayer.Exps.MyAlias,
+		C3.Plugins.Multiplayer.Exps.MyID,
 		C3.Plugins.Multiplayer.Cnds.IsHost,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.System.Exps.layoutname,
@@ -5462,11 +5464,9 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Sprite.Acts.LoadURL,
 		C3.Plugins.Sparsha_qrCode.Exps.getQR_URL,
 		C3.Plugins.Multiplayer.Cnds.OnSignallingConnected,
-		C3.Plugins.Multiplayer.Acts.SignallingLogin,
 		C3.Plugins.Sparsha_qrCode.Acts.CreateQr,
+		C3.Plugins.Multiplayer.Acts.SignallingLogin,
 		C3.Plugins.Multiplayer.Cnds.OnSignallingLoggedIn,
-		C3.Plugins.Multiplayer.Exps.MyAlias,
-		C3.Plugins.Multiplayer.Exps.MyID,
 		C3.Plugins.Multiplayer.Acts.SignallingJoinRoom,
 		C3.Plugins.Multiplayer.Cnds.OnSignallingJoinedRoom,
 		C3.Plugins.Multiplayer.Cnds.OnPeerConnected,
@@ -5706,9 +5706,11 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		() => "Goal!",
 		() => "You Win!",
 		() => "You Lose!",
-		() => "player no",
-		() => "You are player no 1",
-		() => "You are player no 2",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => (((("You are player: " + f0()) + " (") + f1()) + ")");
+		},
 		() => "Invite",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -5717,15 +5719,16 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			const v1 = p._GetNode(1).GetVar();
-			return () => (((v0.GetValue() + "/room='") + v1.GetValue()) + "'");
+			return () => ((v0.GetValue() + "?room=") + v1.GetValue());
 		},
 		() => "wss://multiplayer.scirra.com",
 		() => "url",
 		() => "Connected, logging in...",
-		() => "Player1",
 		() => 568,
 		() => "#000000",
 		() => "#ffffff",
+		() => "Player1",
+		() => "Player2",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
