@@ -5790,8 +5790,8 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 			return () => f0(1);
 		},
 		p => {
-			const n0 = p._GetNode(0);
-			return () => and("player 2 shoot ", n0.ExpInstVar());
+			const v0 = p._GetNode(0).GetVar();
+			return () => and("player turn ", v0.GetValue());
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -5831,10 +5831,6 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const n1 = p._GetNode(1);
 			return () => f0(n1.ExpObject("angle"));
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => and("player turn ", v0.GetValue());
 		},
 		() => "Invite",
 		p => {
