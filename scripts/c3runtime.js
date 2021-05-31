@@ -5458,9 +5458,10 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Multiplayer.Exps.MyID,
 		C3.Plugins.Multiplayer.Cnds.IsHost,
 		C3.Plugins.Multiplayer.Acts.HostBroadcastMessage,
+		C3.Plugins.Sprite.Acts.SetInstanceVar,
+		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.Multiplayer.Exps.PeerIDAt,
 		C3.Plugins.Sprite.Acts.Destroy,
-		C3.Plugins.Multiplayer.Acts.SendPeerMessage,
 		C3.Plugins.Multiplayer.Cnds.OnPeerMessage,
 		C3.Plugins.System.Exps.int,
 		C3.Plugins.Multiplayer.Exps.Message,
@@ -5472,6 +5473,7 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Sparsha_qrCode.Exps.getQR_URL,
 		C3.Plugins.Multiplayer.Cnds.OnSignallingConnected,
 		C3.Plugins.Multiplayer.Acts.SyncObject,
+		C3.Plugins.Multiplayer.Acts.SyncObjectInstanceVar,
 		C3.Plugins.Sparsha_qrCode.Acts.CreateQr,
 		C3.Plugins.Multiplayer.Acts.SignallingLogin,
 		C3.Plugins.Multiplayer.Cnds.OnSignallingLoggedIn,
@@ -5506,6 +5508,9 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		{Player1: 0},
 		{no: 0},
 		{Player1Pos: 0},
+		{impulseVal: 0},
+		{angleVal: 0},
+		{shoot: 0},
 		{Player2: 0},
 		{Player2Pos: 0},
 		{ball: 0},
@@ -5723,6 +5728,10 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue()).toString();
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpInstVar();
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
