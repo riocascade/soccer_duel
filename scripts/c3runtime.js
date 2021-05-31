@@ -5464,6 +5464,8 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.Sprite.Acts.Destroy,
+		C3.Plugins.Sprite.Cnds.OnCreated,
+		C3.Behaviors.Physics.Acts.SetEnabled,
 		C3.Plugins.Multiplayer.Cnds.OnPeerMessage,
 		C3.Plugins.System.Exps.int,
 		C3.Plugins.Multiplayer.Exps.Message,
@@ -5750,7 +5752,7 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0(0);
+			return () => f0(1);
 		},
 		p => {
 			const n0 = p._GetNode(0);
