@@ -5464,6 +5464,7 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.Sprite.Acts.Destroy,
+		C3.Plugins.Touch.Cnds.OnDoubleTapGesture,
 		C3.Plugins.Sprite.Cnds.OnCreated,
 		C3.Behaviors.Physics.Acts.SetEnabled,
 		C3.Plugins.Multiplayer.Cnds.OnPeerMessage,
@@ -5753,6 +5754,14 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(1);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => ("player 2 peer id " + n0.ExpInstVar());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => ("player 1 peer id " + n0.ExpInstVar());
 		},
 		p => {
 			const n0 = p._GetNode(0);
