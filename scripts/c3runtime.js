@@ -5454,16 +5454,14 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.System.Acts.RestartLayout,
-		C3.Plugins.System.Exps.projectversion,
-		C3.Plugins.Multiplayer.Cnds.IsHost,
 		C3.Plugins.Multiplayer.Exps.MyAlias,
 		C3.Plugins.Multiplayer.Exps.MyID,
+		C3.Plugins.System.Exps.projectversion,
+		C3.Plugins.Multiplayer.Cnds.IsHost,
+		C3.Plugins.Multiplayer.Exps.PeerIDAt,
 		C3.Plugins.Multiplayer.Acts.HostBroadcastMessage,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
-		C3.Plugins.Multiplayer.Exps.PeerIDAt,
-		C3.Plugins.Multiplayer.Exps.PeerAlias,
-		C3.Plugins.Multiplayer.Exps.PeerID,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Multiplayer.Cnds.OnPeerMessage,
 		C3.Plugins.System.Exps.int,
@@ -5725,12 +5723,16 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		() => "You Lose!",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => (((("You are player: " + f0()) + " (") + f1()) + ")");
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => ("version " + f0());
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			const f1 = p._GetNode(1).GetBoundMethod();
-			return () => (((("You are player: " + f0()) + " (") + f1()) + ")");
+			return () => ("peer id at 0" + f0(0));
 		},
 		() => "playerTurn",
 		p => {
@@ -5744,10 +5746,6 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(0);
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => ("peer id at " + f0(0));
 		},
 		p => {
 			const n0 = p._GetNode(0);
