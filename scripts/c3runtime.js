@@ -5457,9 +5457,10 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Multiplayer.Exps.MyAlias,
 		C3.Plugins.Multiplayer.Exps.MyID,
 		C3.Plugins.Multiplayer.Cnds.IsHost,
-		C3.Plugins.Multiplayer.Acts.SendPeerMessage,
+		C3.Plugins.Multiplayer.Acts.HostBroadcastMessage,
 		C3.Plugins.Multiplayer.Exps.PeerIDAt,
 		C3.Plugins.Sprite.Acts.Destroy,
+		C3.Plugins.Multiplayer.Acts.SendPeerMessage,
 		C3.Plugins.Multiplayer.Cnds.OnPeerMessage,
 		C3.Plugins.System.Exps.int,
 		C3.Plugins.Multiplayer.Exps.Message,
@@ -5717,10 +5718,6 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => (((("You are player: " + f0()) + " (") + f1()) + ")");
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0(0);
 		},
 		() => "playerTurn",
 		p => {
