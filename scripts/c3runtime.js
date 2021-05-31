@@ -5495,6 +5495,7 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Multiplayer.Acts.SendPeerMessage,
 		C3.Plugins.Dictionary.Exps.AsJSON,
 		C3.Plugins.Multiplayer.Cnds.OnPeerMessage,
+		C3.Plugins.Multiplayer.Acts.DisconnectRoom,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Multiplayer.Exps.Message,
 		C3.Plugins.System.Exps.int,
