@@ -5750,6 +5750,11 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 			return () => ("peer id at " + f0(0));
 		},
 		p => {
+			const n0 = p._GetNode(0);
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => ((("touch id " + n0.ExpInstVar()) + "/ my id ") + f1());
+		},
+		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => f0(f1());
