@@ -5489,6 +5489,7 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Touch.Cnds.OnDoubleTapGesture,
 		C3.Plugins.Sprite.Cnds.OnCreated,
+		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Behaviors.Physics.Acts.SetEnabled,
 		C3.Plugins.Dictionary.Acts.Clear,
 		C3.Plugins.Dictionary.Acts.AddKey,
@@ -5497,9 +5498,9 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Multiplayer.Cnds.OnPeerMessage,
 		C3.Plugins.Dictionary.Acts.JSONLoad,
 		C3.Plugins.Multiplayer.Exps.Message,
-		C3.Plugins.System.Exps.int,
 		C3.Plugins.Dictionary.Exps.Get,
 		C3.Plugins.System.Exps.float,
+		C3.Plugins.System.Exps.int,
 		C3.Plugins.Multiplayer.Cnds.OnClientUpdate,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.System.Exps.layoutname,
@@ -5802,9 +5803,12 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		() => "uid",
 		() => "player2shoot",
 		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const n1 = p._GetNode(1);
-			return () => f0(n1.ExpObject("uid"));
+			const n0 = p._GetNode(0);
+			return () => ("player json " + n0.ExpObject());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject("uid");
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
