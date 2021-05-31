@@ -5804,7 +5804,7 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		() => "player2shoot",
 		p => {
 			const n0 = p._GetNode(0);
-			return () => ("player json " + n0.ExpObject());
+			return () => and("player no ", n0.ExpObject("uid"));
 		},
 		p => {
 			const n0 = p._GetNode(0);
