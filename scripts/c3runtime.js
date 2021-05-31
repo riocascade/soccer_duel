@@ -5757,11 +5757,7 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => ("player 2 peer id " + n0.ExpInstVar());
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => ("player 1 peer id " + n0.ExpInstVar());
+			return () => and("player 2 shoot ", n0.ExpInstVar());
 		},
 		p => {
 			const n0 = p._GetNode(0);
