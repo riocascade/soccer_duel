@@ -5490,19 +5490,17 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Touch.Cnds.OnDoubleTapGesture,
 		C3.Plugins.Sprite.Cnds.OnCreated,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
-		C3.Behaviors.Physics.Acts.SetEnabled,
 		C3.Plugins.Dictionary.Acts.Clear,
 		C3.Plugins.Dictionary.Acts.AddKey,
 		C3.Plugins.Multiplayer.Acts.SendPeerMessage,
 		C3.Plugins.Dictionary.Exps.AsJSON,
 		C3.Plugins.Multiplayer.Cnds.OnPeerMessage,
-		C3.Plugins.Dictionary.Acts.JSONLoad,
+		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Multiplayer.Exps.Message,
+		C3.Plugins.System.Exps.int,
+		C3.Plugins.Dictionary.Acts.JSONLoad,
 		C3.Plugins.Dictionary.Exps.Get,
 		C3.Plugins.System.Exps.float,
-		C3.Plugins.System.Exps.int,
-		C3.Plugins.Multiplayer.Cnds.OnClientUpdate,
-		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.System.Exps.layoutname,
 		C3.Plugins.Multiplayer.Acts.SignallingConnect,
 		C3.Plugins.Sparsha_qrCode.Cnds.OnGenerated,
@@ -5510,7 +5508,6 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Sparsha_qrCode.Exps.getQR_URL,
 		C3.Plugins.Multiplayer.Cnds.OnSignallingConnected,
 		C3.Plugins.Multiplayer.Acts.SyncObject,
-		C3.Plugins.Multiplayer.Acts.SyncObjectInstanceVar,
 		C3.Plugins.Sparsha_qrCode.Acts.CreateQr,
 		C3.Plugins.Multiplayer.Acts.SignallingLogin,
 		C3.Plugins.Multiplayer.Cnds.OnSignallingLoggedIn,
@@ -5579,6 +5576,9 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		{targetScore: 0},
 		{fullscreen: 0},
 		{player2UID: 0},
+		{gameStart: 0},
+		{goal1: 0},
+		{goal2: 0},
 		{message: 0}
 	];
 }
@@ -5802,6 +5802,18 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		() => "angle",
 		() => "uid",
 		() => "player2shoot",
+		() => "score2",
+		() => "GOAL!",
+		() => "score1",
+		() => "1",
+		() => "end",
+		() => "2",
+		() => "restart",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => f0(f1());
+		},
 		p => {
 			const n0 = p._GetNode(0);
 			return () => and("player no ", n0.ExpObject("uid"));
@@ -5819,11 +5831,6 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const n1 = p._GetNode(1);
 			return () => f0(n1.ExpObject("angle"));
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const f1 = p._GetNode(1).GetBoundMethod();
-			return () => f0(f1());
 		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
