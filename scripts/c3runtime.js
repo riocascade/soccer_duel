@@ -5537,7 +5537,6 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Dictionary.Acts.JSONLoad,
 		C3.Plugins.Dictionary.Exps.Get,
 		C3.Plugins.System.Exps.float,
-		C3.Plugins.Multiplayer.Cnds.OnPeerDisconnected,
 		C3.Plugins.System.Exps.layoutname,
 		C3.Plugins.Multiplayer.Acts.SignallingConnect,
 		C3.Plugins.Sparsha_qrCode.Cnds.OnGenerated,
@@ -5850,10 +5849,10 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		() => "GOAL!",
 		() => "score1",
 		() => "1",
-		() => "end",
-		() => "2",
 		() => "restart",
 		() => "Scan the QR Code start new match, Thank you!",
+		() => "end",
+		() => "2",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
