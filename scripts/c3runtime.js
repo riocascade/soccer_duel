@@ -5434,6 +5434,9 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Touch.Cnds.OnTouchStart,
 		C3.Plugins.Browser.Cnds.IsFullscreen,
 		C3.Plugins.Browser.Acts.RequestFullScreen,
+		C3.Plugins.Browser.Cnds.IsPortraitLandscape,
+		C3.Plugins.System.Cnds.TriggerOnce,
+		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Behaviors.Fade.Acts.SetFadeInTime,
 		C3.Behaviors.Fade.Acts.SetFadeOutTime,
 		C3.Behaviors.Fade.Acts.StartFade,
@@ -5448,7 +5451,7 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.Text.Cnds.CompareY,
 		C3.Plugins.Text.Acts.SetY,
-		C3.Plugins.System.Cnds.TriggerOnce,
+		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Plugins.Sprite.Acts.SetOpacity,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
@@ -5485,7 +5488,6 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		C3.Plugins.Multiplayer.Exps.PeerIDAt,
 		C3.Plugins.Multiplayer.Acts.HostBroadcastMessage,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
-		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Touch.Cnds.OnDoubleTapGesture,
 		C3.Plugins.Sprite.Cnds.OnCreated,
@@ -5561,6 +5563,8 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		{Bullet: 0},
 		{ScrollText: 0},
 		{Player2Data: 0},
+		{GoalScore: 0},
+		{WhiteBox: 0},
 		{fullUrl: 0},
 		{roomName: 0},
 		{gameName: 0},
@@ -5699,6 +5703,7 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 			return () => ("param " + f0("room"));
 		},
 		() => "",
+		() => "prompt",
 		() => "left scroll",
 		() => 90,
 		() => "right scroll",
@@ -5713,12 +5718,12 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		() => -824,
 		() => 1124,
 		() => 1904,
-		() => "score",
+		() => "player1",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			return () => and(and(v0.GetValue(), ":"), v1.GetValue());
+			return () => v0.GetValue();
 		},
+		() => "player2",
 		() => 70,
 		() => 100,
 		p => {
@@ -5736,10 +5741,6 @@ const map=new WeakMap;self.IBulletBehaviorInstance=class IBulletBehaviorInstance
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() / 2);
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => v0.GetValue();
 		},
 		p => {
 			const n0 = p._GetNode(0);
