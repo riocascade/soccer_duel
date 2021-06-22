@@ -5587,6 +5587,7 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 		C3.Plugins.Multiplayer.Cnds.OnSignallingLoggedIn,
 		C3.Plugins.Multiplayer.Acts.SignallingJoinRoom,
 		C3.Plugins.Multiplayer.Cnds.OnSignallingJoinedRoom,
+		C3.Plugins.Multiplayer.Exps.CurrentRoom,
 		C3.Plugins.Multiplayer.Cnds.OnPeerConnected,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.Arr.Acts.Push,
@@ -5937,8 +5938,14 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => (((((("Logged in with alias: " + f0()) + " (") + f1()) + ")") + "\n") + "Joining room...");
 		},
-		() => "Joined room as host, waiting for peer...",
-		() => "Joined room as peer",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => (("Joined room  " + f0()) + "  as host, waiting for peer...");
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => (("Joined room " + f0()) + " as peer");
+		},
 		() => "Message log",
 		() => 20,
 		p => {
