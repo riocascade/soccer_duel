@@ -5840,7 +5840,7 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 		() => "Goal!",
 		() => "You Win!",
 		() => "restart",
-		() => "Scan the QR Code start new match, Thank you!",
+		() => "Scan the QR Code to start new match, Thank you!",
 		() => "You Lose!",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -5891,7 +5891,6 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 		() => "1",
 		() => "end",
 		() => "2",
-		() => "Scan the QR Code to start new match, Thank you!",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
