@@ -5590,6 +5590,7 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 		C3.Plugins.Multiplayer.Cnds.OnSignallingJoinedRoom,
 		C3.Plugins.Multiplayer.Exps.CurrentRoom,
 		C3.Plugins.Multiplayer.Cnds.OnPeerConnected,
+		C3.Plugins.Multiplayer.Cnds.OnPeerDisconnected,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.Arr.Acts.Push,
 		C3.Plugins.Arr.Cnds.CompareSize,
@@ -5931,9 +5932,12 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 		() => "turn:bn-turn1.xirsys.com:80?transport=udp",
 		() => "j1F8ulsfNkuBx18QIAwuzH4QgIz3mcKZQJ2bNY3lQSGJQ4vX2v4U_1825xlicx-2AAAAAGDSEWJ6YWhlZGthbWFsODc=",
 		() => "e55d9a4e-d377-11eb-8a07-0242ac140004",
-		() => "turn:bn-turn1.xirsys.com:80?transport=tcp",
 		() => "wss://multiplayer.scirra.com",
 		() => "url",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => and("Peer count ", f0());
+		},
 		() => "Connected, logging in...",
 		() => 568,
 		() => "#000000",
@@ -5952,6 +5956,11 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => (("Joined room " + f0()) + " as peer");
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => (((((("" + f0()) + " (") + f1()) + ")") + "\n") + "Dc from room...");
 		},
 		() => "Message log",
 		() => 20,
