@@ -5646,6 +5646,8 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 		{gameState: 0},
 		{WAITING: 0},
 		{domainName: 0},
+		{iceUsername: 0},
+		{iceCredential: 0},
 		{playerturn: 0},
 		{playerTouch: 0},
 		{playerIdTurn: 0},
@@ -5927,6 +5929,8 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 			return () => ((v0.GetValue() + "?room=") + v1.GetValue());
 		},
 		() => "turn:bn-turn1.xirsys.com:80?transport=udp",
+		() => "j1F8ulsfNkuBx18QIAwuzH4QgIz3mcKZQJ2bNY3lQSGJQ4vX2v4U_1825xlicx-2AAAAAGDSEWJ6YWhlZGthbWFsODc=",
+		() => "e55d9a4e-d377-11eb-8a07-0242ac140004",
 		() => "turn:bn-turn1.xirsys.com:3478?transport=udp",
 		() => "turn:bn-turn1.xirsys.com:80?transport=tcp",
 		() => "turn:bn-turn1.xirsys.com:3478?transport=tcp",
