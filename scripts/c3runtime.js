@@ -5576,6 +5576,7 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 		C3.Plugins.Dictionary.Exps.Get,
 		C3.Plugins.System.Exps.float,
 		C3.Plugins.System.Exps.layoutname,
+		C3.Plugins.Multiplayer.Acts.AddICEServer,
 		C3.Plugins.Multiplayer.Acts.SignallingConnect,
 		C3.Plugins.Sparsha_qrCode.Cnds.OnGenerated,
 		C3.Plugins.Sprite.Acts.LoadURL,
@@ -5925,6 +5926,12 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 			const v1 = p._GetNode(1).GetVar();
 			return () => ((v0.GetValue() + "?room=") + v1.GetValue());
 		},
+		() => "turn:bn-turn1.xirsys.com:80?transport=udp",
+		() => "turn:bn-turn1.xirsys.com:3478?transport=udp",
+		() => "turn:bn-turn1.xirsys.com:80?transport=tcp",
+		() => "turn:bn-turn1.xirsys.com:3478?transport=tcp",
+		() => "turns:bn-turn1.xirsys.com:443?transport=tcp",
+		() => "turns:bn-turn1.xirsys.com:5349?transport=tcp",
 		() => "wss://multiplayer.scirra.com",
 		() => "url",
 		() => "Connected, logging in...",
