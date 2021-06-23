@@ -5937,6 +5937,7 @@ map.get(this)._SetGravity(g)}get angleOfMotion(){return map.get(this)._GetAngleO
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(1);
 		},
+		() => 0.5,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => and("player turn ", v0.GetValue());
